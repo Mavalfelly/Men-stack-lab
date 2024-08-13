@@ -10,8 +10,8 @@
     <h3>Favorite Sport Teams</h3>
     <a href="/teams/new"><button>Add a Team</button></a>
     <ul>
-        <% for(t of k) { %>
-                <a href="/team/<%=t._id%>"><li><%=t.text%></li></a>
+        <% for(t of team) { %>
+                <a href="/team/<%=t._id%>"><li><%=t.name%></li></a>
         <% } %>
     </ul>
 
