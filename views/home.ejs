@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="'stylesheet" href="/styles">
+    <link rel="'stylesheet" href="/styles.css">
 </head>
 <body>
     <h3>Favorite Sport Teams</h3>
     <a href="/teams/new"><button>Add a Team</button></a>
-    <ul>
+    <ul class="teams">
         <% for(t of teams) { %>
-                <a href="/team/<%=t._id%>"><li><%=t.teamName%></li></a>
+                <a href="/teams/<%=t._id%>"><li><%=t.teamName%></li></a>
         <% } %>
     </ul>
 </body>

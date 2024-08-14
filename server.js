@@ -38,18 +38,19 @@ app.get('/teams/:id', async (req,res) =>{
     const selectedTeam = await Teams.findById(req.params.id);
     res.render('info.ejs', {team: selectedTeam})
 });
-
-
-
-
-
-
-
-
-
-
-
-
+app.put('/teams/:id', async (req,res) =>{
+    try{
+        req.body.yearCreated = Number(req.body.yearCreated);
+        await Teams.findByIdAndUpdate(req.params.id,req.body)
+        res.redirect('/teams')
+    }catch (err) {
+        res.status(400).json(err);
+    }
+});
+app.delete('/teams/:id', async (req,res)=>{
+    await Teams.findByIdAndDelete(req.params.id)
+    res.redirect('/teams')
+});
 
 app.listen(process.env.PORT, () => {
     console.log(`listening on port ${process.env.PORT}`)
