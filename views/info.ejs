@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/teams/<%=team._id%>?_method=PUT" method="post">
+        <fieldset>
+            <legend>Edit a Team</legend>
+            <label>
+                Team: <input value="<%=team.teamName%>"   type="text" name="teamName" placeholder="Enter Team Name"/>
+            </label>
+            <br>
+            <label>
+                City: <input value="<%=team.city%>" type="text" name="city" placeholder="Enter City Here"/>
+            </label>
+            <br>
+            <label>
+                State: <input value="<%=team.state%>" type="text" name="state" placeholder="Enter State Here"/>
+            </label>
+            <br>
+            <label>
+                Year Founded: <input value="<%=team.yearCreated%>" type="number" name="yearCreated" placeholder="Year Founded"/>
+            </label>
+            <br>
+            <label>
+                Sport: <input value="<%=team.sport%>" type="text" name="sport" placeholder=""/>
+            </label>
+            <br>
+            <label>
+                Submited By: <input value="<%=team.submitedBy%>" type="text" name="submitedBy" placeholder="Your Name"/>
+            </label>
+        </fieldset>
+        <input type="submit" value="Edit The Team"/>
+    </form>
+    <br>
+    <a href="/teams"><button>Go Back</button></a>
+    <form action="/teams/<%=team._id%>?_method=DELETE" method="post">
+        <input type="submit" value="Remove This Team">
+    </form>
+</body>
+</html>
